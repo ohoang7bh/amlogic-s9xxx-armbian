@@ -20,7 +20,7 @@ on:
       armbian_board:
         description: "Select Box Board."
         required: false
-        default: "all"
+        default: "s922x"
         type: choice
         options:
           - all
@@ -51,7 +51,7 @@ on:
       armbian_kernel:
         description: "Select kernel version."
         required: false
-        default: "5.15.85_6.1.1"
+        default: "5.15.15"
         type: choice
         options:
           - 5.4.225_5.10.160_5.15.85
@@ -61,6 +61,7 @@ on:
           - 5.4.225
           - 5.10.160
           - 5.15.85
+          - 5.15.15
           - 6.1.1
       auto_kernel:
         description: "Auto use the latest kernel."
@@ -93,7 +94,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     if: ${{ github.event.repository.owner.id }} == ${{ github.event.sender.id }}
 
     steps:
